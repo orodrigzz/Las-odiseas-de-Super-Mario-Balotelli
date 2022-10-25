@@ -42,4 +42,6 @@ public class Movement : MonoBehaviour
 
     public float GetCurrentSpeed() { return finalVelocity.z /*currentspeed*/; }
 
+    //public float isJumping() { return isJumping; }
+
 }

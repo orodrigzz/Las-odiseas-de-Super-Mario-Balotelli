@@ -14,6 +14,8 @@ public class AnimationController : MonoBehaviour
 
     private void Update() { 
        animator.SetFloat("speed", movement.GetCurrentSpeed());
+
+       //animator.SetBool("isJumping", movement.isJumping());
     }
 
 }          
