@@ -1,0 +1,33 @@
+6 Noviembre
+
+Personaje principal (2 puntos)
+● Movimiento relativo a la orientación de la cámara con aceleración.
+● Salto, doble salto y triple salto.
+
+● Agacharse y andar agachado.
+● Salto largo y mortal hacía atrás.
+● Salto rebote a pared.
+● Lanzamiento de Cappy y mecánica de rebote al contactar con él.
+
+Animaciones (2 puntos)
+● Caminar/Correr.
+● Salto.
+● Doble salto.
+● Triple salto.
+
+Colisiones (1.5 puntos)
+● Elementos estáticos que matan al jugador, al morir se reinicia el nivel.
+● Estrellas esparcidas por el mundo, cuando el jugador recolecta X cantidad
+gana la partida. Cuando una moneda es recogida desaparece del nivel.
+● Plataformas de rebote que impulsaran el jugador hacía una dirección.
+
+Inputs (1.5 puntos)
+● Usando teclado y ratón.
+
+● Usando un mando conectado al ordenador.
+
+Para la entrega subir en un repositorio la entrega y compartirla con el correo alex.perez@enti.cat
+en el campus un archivo .txt con el enlace
+
+raíz de la carpeta existirá una carpeta llamada IGNORE
+aquel material que haya usado para la entrega pero no sea suyo
