@@ -8,9 +8,9 @@ public class Movement : MonoBehaviour
 
     private Vector3 finalVelocity = Vector3.zero;
     private float velocityXZ = 5f;
-
+    public float currentspeed = 0f;
     [SerializeField]
-    Camera camera;
+    Camera camera; 
 
     private void Awake()
     {
@@ -31,6 +31,15 @@ public class Movement : MonoBehaviour
         finalVelocity.z = direction.z * velocityXZ;
 
         controller.Move(finalVelocity * Time.deltaTime);
+
+        ////Salto
+
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+            
+        //}
     }
+
+    public float GetCurrentSpeed() { return finalVelocity.z /*currentspeed*/; }
 
 }
