@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private Movement movement; 
+    private Player player; 
     private Animator animator; 
     private void Awake()
     {
-        movement = GetComponent<Movement>();
+        player = GetComponent<Player>();
         animator = GetComponent<Animator>(); 
     }
 
     private void Update() { 
-       animator.SetFloat("speed", movement.GetCurrentSpeed());
+       animator.SetFloat("speed", player.GetCurrentSpeed());
 
-       //animator.SetBool("isJumping", movement.isJumping());
+       animator.SetBool("isJumping", player.Jumping());
     }
 
 }          
