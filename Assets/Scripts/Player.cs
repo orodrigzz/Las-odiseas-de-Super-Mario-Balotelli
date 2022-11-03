@@ -99,6 +99,11 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             estrellas++;
         }
+
+        if (collision.gameObject.tag == "Frontera")
+        {
+            SceneManager.LoadScene("Dead");
+        }
     }
 
     
