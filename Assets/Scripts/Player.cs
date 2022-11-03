@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class Player : MonoBehaviour
     private float max_fallSpeed = 10.0f;
 
     private bool isJumping;
+
+    [SerializeField]
+    private int estrellas = 0;
 
     private void Awake()
     {
@@ -71,9 +75,31 @@ public class Player : MonoBehaviour
         currentspeed = new Vector3(finalVelocity.x, 0.0f, finalVelocity.z).magnitude;
 
         controller.Move(finalVelocity * Time.deltaTime);
+
+
+        if (estrellas > 15)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
     public float GetCurrentSpeed() { return currentspeed; }
 
     public bool Jumping() { return isJumping; }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "MatarPlayer")
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+
+        if (collision.gameObject.tag == "Estrella")
+        {
+            Destroy(collision.gameObject);
+            estrellas++;
+        }
+    }
+
+    
 }
