@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         controller.Move(finalVelocity * Time.deltaTime);
 
 
-        if (estrellas > 15)
+        if (estrellas == 5)
         {
             SceneManager.LoadScene("Win");
         }
