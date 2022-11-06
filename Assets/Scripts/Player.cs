@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
             {
                 isCrouching = true;
             }
+
             if (Input.GetKey(KeyCode.X))
             {
                 isCrouching = false;

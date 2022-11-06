@@ -12,8 +12,8 @@ public class InputManager : MonoBehaviour
     private float timeSinceJumppPressed = 0f;
     public Vector2 leftAxisValue = Vector2.zero;
 
-    public float isCrouching;
-    public float timeSinceThrowCappy;
+    //public float isCrouching;
+    //public float timeSinceThrowCappy;
 
     private void Awake()
     {
@@ -29,10 +29,10 @@ public class InputManager : MonoBehaviour
             playerInputs.Player.Jump.performed += JumpButtonPressed;
             playerInputs.Player.Move.performed += LeftAxisUpdate;
 
-            playerInputs.Player.ThrowCappy.performed += ThrowButtonPressed;
+            //playerInputs.Player.ThrowCappy.performed += ThrowButtonPressed;
 
-            playerInputs.Player.CrouchStart.performed += x => CrouchPressed();
-            playerInputs.Player.CrouchEnd.performed += x => CrouchReleased();
+            //playerInputs.Player.CrouchStart.performed += x => CrouchPressed();
+            //playerInputs.Player.CrouchEnd.performed += x => CrouchReleased();
 
             _INPUT_MANAGER = this;
             DontDestroyOnLoad(this);
@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         timeSinceJumppPressed += Time.deltaTime;
-        timeSinceThrowCappy += Time.deltaTime;
+        //timeSinceThrowCappy += Time.deltaTime;
 
         InputSystem.Update();
     }
@@ -50,16 +50,6 @@ public class InputManager : MonoBehaviour
     public void JumpButtonPressed(InputAction.CallbackContext context)
     {
         timeSinceJumppPressed = 0f;
-    }
-
-    private void CrouchPressed()
-    {
-        isCrouching = 1;
-    }
-
-    private void CrouchReleased()
-    {
-        isCrouching = 0;
     }
 
     private void LeftAxisUpdate(InputAction.CallbackContext context)
@@ -77,18 +67,28 @@ public class InputManager : MonoBehaviour
         return this.timeSinceJumppPressed;
     }
 
-    public void ThrowButtonPressed(InputAction.CallbackContext context)
-    {
-        timeSinceThrowCappy = 0f;
-    }
+    //private void CrouchPressed()
+    //{
+    //    isCrouching = 1;
+    //}
 
-    public bool GetThrowButtonPressed()
-    {
-        return this.timeSinceThrowCappy == 0f;
-    }
+    //private void CrouchReleased()
+    //{
+    //    isCrouching = 0;
+    //}
 
-    public float TimeSinceThrowPressed()
-    {
-        return this.timeSinceThrowCappy;
-    }
+    //public void ThrowButtonPressed(InputAction.CallbackContext context)
+    //{
+    //    timeSinceThrowCappy = 0f;
+    //}
+
+    //public bool GetThrowButtonPressed()
+    //{
+    //    return this.timeSinceThrowCappy == 0f;
+    //}
+
+    //public float TimeSinceThrowPressed()
+    //{
+    //    return this.timeSinceThrowCappy;
+    //}
 }

@@ -5039,9 +5039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4757c36e2ef056d4fbdb09e67f320dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftAxisValue: {x: 0, y: 0}
-  rightAxisValue: {x: 0, y: 0}
-  timeSinceThrowCappy: 0
+  leftAxisValue: {x: 0.74, y: 0}
 --- !u!4 &1495726083
 Transform:
   m_ObjectHideFlags: 0
