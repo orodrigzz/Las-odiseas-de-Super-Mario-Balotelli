@@ -10,7 +10,7 @@ S
 D | 
  | Jump -> Espacio
  | Cappy -> E 
- | Crouch -> Empezar C
+ | Crouch -> Empezar C | 
           Acabar X  | 
 
 Crouch bugeado, ya que cuando pongo que copie el Avatar me sale este error, así que esta mal implementado.
