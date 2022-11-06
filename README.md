@@ -7,11 +7,11 @@ Controles:
 W 
 A 
 S 
-D 
-Jump -> Espacio
-Cappy -> E 
-Crouch -> Empezar C
-          Acabar X
+D | 
+ | Jump -> Espacio
+ | Cappy -> E 
+ | Crouch -> Empezar C
+          Acabar X  | 
 
 Crouch bugeado, ya que cuando pongo que copie el Avatar me sale este error, así que esta mal implementado.
 ![Captura](https://user-images.githubusercontent.com/98030912/200163231-b7f456a8-775f-4330-8842-e32c55313258.PNG)
