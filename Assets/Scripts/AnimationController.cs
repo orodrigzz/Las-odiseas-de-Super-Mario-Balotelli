@@ -6,19 +6,19 @@ public class AnimationController : MonoBehaviour
 {
     private Player player; 
     private Animator animator; 
+
     private void Awake()
     {
         player = GetComponent<Player>();
         animator = GetComponent<Animator>(); 
     }
 
-    private void Update() { 
+    private void Update() 
+    { 
        animator.SetFloat("speed", player.GetCurrentSpeed());
 
        animator.SetBool("isJumping", player.Jumping());
-
-        //animator.SetFloat("HasJumped", InputManager._INPUT_MANAGER.TimeSinceSouthButtonPressed());
-        //animator.SetFloat("Crouch", _player.GetCrouch());
+       
+       animator.SetBool("isCrouching", player.GetCrouch());
     }
-
 }          

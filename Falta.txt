@@ -1,24 +1,11 @@
-Personaje principal (2 puntos)
 ● Doble salto y triple salto.
-● Agacharse y andar agachado.
-
-● Salto largo y mortal hacía atrás.
 ● Salto rebote a pared.
 ● Lanzamiento de Cappy y mecánica de rebote al contactar con él.
-
-Animaciones (2 puntos)
-● Doble salto.
-● Triple salto.
-
-Colisiones (1.5 puntos)
-● Plataformas de rebote que impulsaran el jugador hacía una dirección.
-
-Inputs (1.5 puntos)
+---------------------------------------------------------
+Colisiones 
+● Plataformas de rebote que impulsaran el jugador.
+---------------------------------------------------------
+Bindings
 ● Usando teclado y ratón.
 ● Usando un mando conectado al ordenador.
-
-Para la entrega subir en un repositorio la entrega y compartirla con el correo alex.perez@enti.cat
-en el campus un archivo .txt con el enlace
-
-raíz de la carpeta existirá una carpeta llamada IGNORE
-aquel material que haya usado para la entrega pero no sea suyo
+---------------------------------------------------------

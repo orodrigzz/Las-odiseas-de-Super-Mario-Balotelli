@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CameraMove",
-                    "type": "PassThrough",
-                    "id": "2bfaa430-38b4-44f4-8538-d6c2a05754a7",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "CrouchStart",
                     "type": "Button",
                     "id": "b038050f-b76c-4ce0-bb3e-d7ba40f01fed",
@@ -49,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ThrowCappy",
+                    "type": "Button",
+                    "id": "c4db61d6-bd17-4aa2-bce9-458196dfa0b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -64,7 +64,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Keyboard",
+                    "name": "2D Vector",
                     "id": "2d19ac9d-4b2b-42fa-8101-5bca4be3e6fc",
                     "path": "2DVector(mode=1)",
                     "interactions": "",
@@ -142,17 +142,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4d3a11ac-26fd-4255-a2de-d3d94895756b",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CameraMove",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6de54255-b68e-4bc2-872d-87ac0c559021",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "Press",
@@ -165,7 +154,7 @@
                 {
                     "name": "",
                     "id": "1120021c-9ee4-4d85-9799-4956a5d72baf",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/c",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -187,11 +176,33 @@
                 {
                     "name": "",
                     "id": "306cec0e-a1b0-4ac5-8741-633cba79ba1a",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/c",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "CrouchEnd",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0c6c382-3bd3-4c94-9b45-2e7ef2762e9f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThrowCappy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99254065-36b1-4d44-8699-4fff18c32fd6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThrowCappy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

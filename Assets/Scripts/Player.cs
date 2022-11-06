@@ -18,11 +18,8 @@ public class Player : MonoBehaviour
 
     private float jumpForce = 10f;
 
-    private float coyoteTime = 1f;
-
-    private float max_fallSpeed = 10.0f;
-
     private bool isJumping;
+    private bool isCrouching;
 
     [SerializeField]
     private int estrellas = 0;
@@ -58,24 +55,25 @@ public class Player : MonoBehaviour
             {
                 isJumping = false;
                 finalVelocity.y = direction.y * gravity * Time.deltaTime;
-                coyoteTime = 1f;
+            }
+
+            if (Input.GetKey(KeyCode.X))
+            {
+                isCrouching = true;
+            }
+            if (Input.GetKey(KeyCode.X))
+            {
+                isCrouching = false;
             }
         }
         else
         {
             finalVelocity.y += direction.y * gravity * Time.deltaTime;
-            coyoteTime -= Time.deltaTime;
-            if (Input.GetKey(KeyCode.Space) && coyoteTime >= 0f)
-            {
-                finalVelocity.y = jumpForce; coyoteTime = 0f;
-            }
-
-            if (finalVelocity.y >= max_fallSpeed) { finalVelocity.y = max_fallSpeed; }
         }
+
         currentspeed = new Vector3(finalVelocity.x, 0.0f, finalVelocity.z).magnitude;
 
         controller.Move(finalVelocity * Time.deltaTime);
-
 
         if (estrellas == 5)
         {
@@ -84,6 +82,8 @@ public class Player : MonoBehaviour
     }
 
     public float GetCurrentSpeed() { return currentspeed; }
+
+    public bool GetCrouch() { return isCrouching; }
 
     public bool Jumping() { return isJumping; }
 
@@ -106,5 +106,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Cappy" || collision.gameObject.tag == "Plataforma")
+        {
+            finalVelocity.y = jumpForce;
+            isJumping = true;
+        }
+        else
+        {
+            isJumping = false;
+            finalVelocity.y = gravity * Time.deltaTime;
+        }
+    }
 }
