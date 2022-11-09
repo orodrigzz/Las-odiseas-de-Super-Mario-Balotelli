@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
                 finalVelocity.y = direction.y * gravity * Time.deltaTime;
             }
 
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey(KeyCode.C))
             {
                 isCrouching = true;
             }

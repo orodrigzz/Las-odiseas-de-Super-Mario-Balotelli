@@ -5,7 +5,3 @@
 Colisiones 
 ● Plataformas de rebote que impulsaran el jugador.
 ---------------------------------------------------------
-Bindings
-● Usando teclado y ratón.
-● Usando un mando conectado al ordenador.
----------------------------------------------------------
