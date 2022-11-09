@@ -20,7 +20,7 @@ public class Cappy : MonoBehaviour
 
         if (velocity == 0)
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 4f);
             time = 0;
         }
     }

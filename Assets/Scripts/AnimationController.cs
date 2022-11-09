@@ -20,5 +20,9 @@ public class AnimationController : MonoBehaviour
        animator.SetBool("isJumping", player.Jumping());
        
        animator.SetBool("isCrouching", player.GetCrouch());
+
+        //animator.SetFloat("HasJumped", InputManager._INPUT_MANAGER.TimeSinceSouthButtonPressed());
+
+        //animator.SetFloat("Crouch", _player.GetCrouch());
     }
 }          

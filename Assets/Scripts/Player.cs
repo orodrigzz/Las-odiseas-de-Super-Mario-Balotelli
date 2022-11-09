@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private CharacterController controller;
+    Rigidbody rb;
 
     private Vector3 finalVelocity = Vector3.zero;
     private float velocityXZ = 5f;
     public float currentspeed = 0f;
+    private Vector3 jump;
 
     [SerializeField]
     Camera camera;
@@ -24,9 +26,17 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int estrellas = 0;
 
+    public GameObject cappy;
+    public Transform spawnCappy;
+    public float cappyForce;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
+
+        jump = new Vector3(0, 2.0f, 0);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -80,6 +90,11 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Win");
         }
+
+        if (InputManager._INPUT_MANAGER.GetThrowButtonPressed())
+        {
+            Instantiate(cappy, spawnCappy.position, spawnCappy.rotation);
+        }
     }
 
     public float GetCurrentSpeed() { return currentspeed; }
@@ -109,15 +124,24 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Cappy" || collision.gameObject.tag == "Plataforma")
+        if (collision.gameObject.tag == "Cappy")
         {
-            finalVelocity.y = jumpForce;
-            isJumping = true;
+            rb.AddForce(jump * cappyForce, ForceMode.Impulse);
         }
-        else
+
+        if (collision.gameObject.tag == "Rebote")
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+        }
+
+        if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
-            finalVelocity.y = gravity * Time.deltaTime;
+        }
+
+        if (collision.gameObject.tag != "Ground")
+        {
+            isJumping = true;
         }
     }
 }

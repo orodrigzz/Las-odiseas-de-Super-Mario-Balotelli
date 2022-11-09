@@ -8,6 +8,9 @@ TagManager:
   - Estrella
   - Frontera
   - Plataforma
+  - Cappy
+  - Ground
+  - Rebote
   layers:
   - Default
   - TransparentFX

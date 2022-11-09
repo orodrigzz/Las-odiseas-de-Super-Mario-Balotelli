@@ -837,6 +837,9 @@ MonoBehaviour:
   currentspeed: 0
   camera: {fileID: 0}
   estrellas: 0
+  cappy: {fileID: 0}
+  spawnCappy: {fileID: 0}
+  cappyForce: 0
 --- !u!1 &2734501363279737971
 GameObject:
   m_ObjectHideFlags: 0
