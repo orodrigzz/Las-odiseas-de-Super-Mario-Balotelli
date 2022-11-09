@@ -13,11 +13,9 @@ D |
  | Crouch -> Empezar C | 
           Acabar X  | 
 
-Crouch bugeado, ya que cuando pongo que copie el Avatar me sale este error, así que esta mal implementado.
-![Captura](https://user-images.githubusercontent.com/98030912/200163231-b7f456a8-775f-4330-8842-e32c55313258.PNG)
-![2](https://user-images.githubusercontent.com/98030912/200163233-9f1b15a7-ef23-4cca-a60a-a416cd15dd3f.PNG)
+Crouch no funciona bien :(
 
 FALTA:
 ● Salto largo y mortal hacía atrás.
-● Binding Mando
+● Crouch bien implementado
 :)
