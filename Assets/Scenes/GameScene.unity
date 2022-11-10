@@ -6815,6 +6815,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 2988602603270082216, guid: 87211e9114a6ffa448a73e116c8883f3, type: 3}
+      propertyPath: estrellas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988602603270082216, guid: 87211e9114a6ffa448a73e116c8883f3, type: 3}
+      propertyPath: cappyForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988602603270082216, guid: 87211e9114a6ffa448a73e116c8883f3, type: 3}
       propertyPath: spawnCappy
       value: 
       objectReference: {fileID: 1142655213}

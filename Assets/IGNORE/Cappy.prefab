@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4305708544274960485}
   - component: {fileID: 3891879391278933038}
+  - component: {fileID: 6187038991823061236}
   m_Layer: 0
   m_Name: Cappy
   m_TagString: Cappy
@@ -46,6 +47,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 176.83545, y: 186.1, z: 6.122697}
   m_Center: {x: -1.6200006, y: -0.9999991, z: 1}
+--- !u!114 &6187038991823061236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3497928805097392863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc2634d821211a41b15f170a709fbe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8070900253773067951
 GameObject:
   m_ObjectHideFlags: 0

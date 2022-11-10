@@ -6,6 +6,6 @@ public class Cappy : MonoBehaviour
 {    
     void Update()
     {
-            Destroy(this.gameObject, 5f);
+            Destroy(this.gameObject, 20f);
     }
 }

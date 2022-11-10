@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private Vector3 finalVelocity = Vector3.zero;
     private float velocityXZ = 5f;
     public float currentspeed = 0f;
-    private Vector3 jump;
 
     [SerializeField]
     Camera camera;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
     private float gravity = 20f;
 
     private float jumpForce = 10f;
+    public float jumpCount;
 
     private bool isJumping;
     private bool isCrouching;
@@ -32,8 +32,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-
-        jump = new Vector3(0, 2.0f, 0);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -54,7 +52,10 @@ public class Player : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            if (Input.GetKey(KeyCode.Space))
+            jumpCount = 0;
+            isJumping = false;
+
+            if (InputManager._INPUT_MANAGER.GetSouthButtonPressed())
             {
                 finalVelocity.y = jumpForce;
                 isJumping = true;
@@ -78,6 +79,13 @@ public class Player : MonoBehaviour
         else
         {
             finalVelocity.y += direction.y * gravity * Time.deltaTime;
+        }
+
+        if (InputManager._INPUT_MANAGER.GetSouthButtonPressed() && !controller.isGrounded && jumpCount <= 1)
+        {
+            isJumping = true;
+            finalVelocity.y = jumpForce;
+            jumpCount++;
         }
 
         currentspeed = new Vector3(finalVelocity.x, 0.0f, finalVelocity.z).magnitude;
@@ -121,7 +129,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Cappy")
         {
-
+            finalVelocity.y = cappyForce;
             Destroy(collision.gameObject);
         }
     }
@@ -130,17 +138,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Rebote")
         {
-
-        }
-
-        if (collision.gameObject.tag == "Ground")
-        {
-            isJumping = false;
-        }
-
-        if (collision.gameObject.tag != "Ground")
-        {
-            isJumping = true;
+            finalVelocity.y = cappyForce;
         }
     }
 }

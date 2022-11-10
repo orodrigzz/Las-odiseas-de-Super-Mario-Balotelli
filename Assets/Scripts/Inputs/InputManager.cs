@@ -12,7 +12,6 @@ public class InputManager : MonoBehaviour
     private float timeSinceJumppPressed = 0f;
     public Vector2 leftAxisValue = Vector2.zero;
 
-    //public float isCrouching;
     public float timeSinceThrowCappy;
 
     private void Awake()
@@ -31,9 +30,6 @@ public class InputManager : MonoBehaviour
 
             playerInputs.Player.ThrowCappy.performed += ThrowButtonPressed;
 
-            //playerInputs.Player.CrouchStart.performed += x => CrouchPressed();
-            //playerInputs.Player.CrouchEnd.performed += x => CrouchReleased();
-
             _INPUT_MANAGER = this;
             DontDestroyOnLoad(this);
         }
@@ -47,14 +43,14 @@ public class InputManager : MonoBehaviour
         InputSystem.Update();
     }
 
-    public void JumpButtonPressed(InputAction.CallbackContext context)
-    {
-        timeSinceJumppPressed = 0f;
-    }
-
     private void LeftAxisUpdate(InputAction.CallbackContext context)
     {
         leftAxisValue = context.ReadValue<Vector2>();
+    }
+
+    public void JumpButtonPressed(InputAction.CallbackContext context)
+    {
+        timeSinceJumppPressed = 0f;
     }
 
     public bool GetSouthButtonPressed()
@@ -66,16 +62,6 @@ public class InputManager : MonoBehaviour
     {
         return this.timeSinceJumppPressed;
     }
-
-    //private void CrouchPressed()
-    //{
-    //    isCrouching = 1;
-    //}
-
-    //private void CrouchReleased()
-    //{
-    //    isCrouching = 0;
-    //}
 
     public void ThrowButtonPressed(InputAction.CallbackContext context)
     {
