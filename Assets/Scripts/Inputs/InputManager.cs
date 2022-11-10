@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     private Player_Inputs playerInputs;
     public static InputManager _INPUT_MANAGER;
 
-    private float timeSinceJumppPressed = 0f;
+    private float timeSinceJumpPressed = 0f;
     public Vector2 leftAxisValue = Vector2.zero;
 
     public float timeSinceThrowCappy;
@@ -18,7 +18,7 @@ public class InputManager : MonoBehaviour
     {
         if (_INPUT_MANAGER != null && _INPUT_MANAGER != this)
         {
-            Destroy(_INPUT_MANAGER);
+            Destroy(this.gameObject);
         }
         else
         {
@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        timeSinceJumppPressed += Time.deltaTime;
+        timeSinceJumpPressed += Time.deltaTime;
         timeSinceThrowCappy += Time.deltaTime;
 
         InputSystem.Update();
@@ -48,21 +48,25 @@ public class InputManager : MonoBehaviour
         leftAxisValue = context.ReadValue<Vector2>();
     }
 
+    ///
+
     public void JumpButtonPressed(InputAction.CallbackContext context)
     {
-        timeSinceJumppPressed = 0f;
+        timeSinceJumpPressed = 0f;
     }
 
     public bool GetSouthButtonPressed()
     {
-        return this.timeSinceJumppPressed == 0f;
+        return this.timeSinceJumpPressed == 0f;
     }
 
     public float TimeSinceSouthButtonPressed()
     {
-        return this.timeSinceJumppPressed;
+        return this.timeSinceJumpPressed;
     }
 
+    ///
+   
     public void ThrowButtonPressed(InputAction.CallbackContext context)
     {
         timeSinceThrowCappy = 0f;
