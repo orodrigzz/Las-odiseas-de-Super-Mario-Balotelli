@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private CharacterController controller;
-    Rigidbody rb;
 
     private Vector3 finalVelocity = Vector3.zero;
     private float velocityXZ = 5f;
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
 
         jump = new Vector3(0, 2.0f, 0);
@@ -120,18 +118,19 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Dead");
         }
+
+        if (collision.gameObject.tag == "Cappy")
+        {
+
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Cappy")
-        {
-            rb.AddForce(jump * cappyForce, ForceMode.Impulse);
-        }
-
         if (collision.gameObject.tag == "Rebote")
         {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+
         }
 
         if (collision.gameObject.tag == "Ground")

@@ -1,18 +1,18 @@
-Personaje principal (2 puntos) (0,3)
+Personaje principal (2 puntos) (0,3 | 1,6)
 ● Doble salto y triple salto.
 ● Agacharse y andar agachado.
 ● Salto rebote a pared.
-● Cappy y mecánica de rebote al contactar con él.
+● Cappy mecánica de rebote al contactar con él.
 
 ● Salto largo y mortal hacía atrás.
 --------------------------------------------------------------------
 Animaciones (2 puntos) (1,2 | 2)
 --------------------------------------------------------------------
-Colisiones (1.5 puntos) (1)
+Colisiones (1.5 puntos) (1,5)
 --------------------------------------------------------------------
 Inputs (1.5 puntos)
 ● Usando teclado y ratón.
 ● Usando un mando conectado al ordenador.
 --------------------------------------------------------------------
-Cámara (1.5 puntos) SI
+Cámara (1.5 puntos) (1,5)
 --------------------------------------------------------------------
