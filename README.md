@@ -18,4 +18,5 @@ Crouch no funciona bien :(
 FALTA:
 ● Salto largo y mortal hacía atrás.
 ● Crouch bien implementado + Crouch Mando
+● Movimiento cámara con mando - Recomendado jugar con teclado
 :)
