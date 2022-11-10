@@ -7,9 +7,9 @@ Controles:
 W 
 A 
 S 
-D | 
- | Jump -> Espacio
- | Cappy -> E 
+D 
+ | Jump -> Espacio | Button South (X Play)
+ | Cappy -> E | Right Shoulder (R1 Play)
  | Crouch -> Empezar C | 
           Acabar X  | 
 
@@ -17,5 +17,5 @@ Crouch no funciona bien :(
 
 FALTA:
 ● Salto largo y mortal hacía atrás.
-● Crouch bien implementado
+● Crouch bien implementado + Crouch Mando
 :)
